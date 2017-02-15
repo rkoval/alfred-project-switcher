@@ -4,5 +4,9 @@ project=`basename $query`
 
 if ! ./focus_window.scpt $project; then
   source ~/.bashrc
-  cd $query && /usr/local/bin/mvim -c "set titlestring=$project"
+  if [ $project == 'simplenote' ]; then
+    ENABLE_NERDTREE=0 mvim -c "set titlestring=$project | SimplenoteList"
+  else
+    cd $query && mvim -c "set titlestring=$project"
+  fi
 fi

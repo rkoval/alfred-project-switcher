@@ -12,11 +12,13 @@ function generateAlfredProjects(projects) {
     try {
       fs.accessSync(projectPath, fs.F_OK);
     } catch (e) {
-      console.warn(`${projectPath} doesn't exist or is not accessible`)
-      return null;
+      if (projectPath !== 'simplenote') {
+        console.warn(`${projectPath} doesn't exist or is not accessible`)
+        return null;
+      }
     }
 
-    console.log(projectName)
+    console.log(projectPath);
     if (!projectName) {
       projectName = path.basename(projectPath)
     }
