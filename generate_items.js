@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs-extra');
 const path = require('path');
+const _ = require('lodash')
 
 const projects = require('./projects.json');
 const alfredProjects = generateAlfredProjects(projects);
@@ -37,7 +38,8 @@ function generateAlfredProjects(projects) {
 
     return alfredProject;
   });
-  return alfredProjects;
+
+  return _.sortBy(alfredProjects, 'title');
 }
 
 function assertProjectsExist(alfredProjects) {
