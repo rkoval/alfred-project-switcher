@@ -9,11 +9,11 @@ assertProjectsExist(alfredProjects);
 injectIntoXml(alfredProjects);
 
 function generateAlfredProjects(projects) {
-  const alfredProjects = projects.map(({projectPath, imageName, projectName}) => {
+  const alfredProjects = projects.map(({projectPath, imageName, projectName, ignoreNonexistentPath}) => {
     try {
       fs.accessSync(projectPath, fs.F_OK);
     } catch (e) {
-      if (projectPath !== 'simplenote') {
+      if (!ignoreNonexistentPath) {
         console.warn(`${projectPath} doesn't exist or is not accessible`)
         return null;
       }
