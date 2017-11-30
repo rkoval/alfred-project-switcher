@@ -2,8 +2,9 @@
 const fs = require('fs-extra');
 const path = require('path');
 const _ = require('lodash')
+const YAML = require('yamljs')
 
-const projects = require('./projects.json');
+const projects = YAML.load('./projects.yml');
 const alfredProjects = generateAlfredProjects(projects);
 assertProjectsExist(alfredProjects);
 injectIntoXml(alfredProjects);
