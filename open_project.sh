@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 query=$1
 project=`basename $query`
 program=mvim
