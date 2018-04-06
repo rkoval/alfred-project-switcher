@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 query=$1
 project=`basename $query`
-program="vimr --nvim"
+program=mvim
 
 if ! ./focus_window.scpt $project; then
   source ~/.bashrc
