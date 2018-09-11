@@ -20,7 +20,7 @@ function generateAlfredProjects(projects) {
       }
     }
 
-    console.log(projectPath);
+    console.log(`adding ${projectPath} ...`);
     if (!projectName) {
       projectName = path.basename(projectPath)
     }
@@ -29,13 +29,8 @@ function generateAlfredProjects(projects) {
       title: projectName,
       arg: projectPath,
       subtitle: projectPath,
+      imagefile: `${imageName}.png`,
     };
-
-    if (imageName) {
-      baseImageDirectory = `${__dirname}/List Filter Images`
-      fs.symlinkSync(`${baseImageDirectory}/${imageName}.png`, `${baseImageDirectory}/links/${projectName}.png`);
-      alfredProject.imagefile = `links/${projectName}.png`
-    }
 
     return alfredProject;
   });

@@ -1,0 +1,9 @@
+---
+- projectPath: /Users/ryankoval/dotfiles
+  imageName: vim
+- projectPath: /path/to/your/project/your-project-name
+  projectName: overridden-project-name # optional property if you want to override the project's directory name in Alfred
+  imageName: sync
+- projectPath: simplenote
+  ignoreNonexistentPath: true
+  imageName: simplenote

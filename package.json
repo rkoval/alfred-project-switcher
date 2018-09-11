@@ -4,7 +4,7 @@
   "description": "Simple workflow switcher for Macvim",
   "main": "generate_items.js",
   "scripts": {
-    "generate": "./run.sh"
+    "generate": "./generate_items.js"
   },
   "author": "Ryan Koval <ryan@ryankoval.com>",
   "license": "MIT",
